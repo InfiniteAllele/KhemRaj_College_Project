@@ -257,3 +257,32 @@ form .page .field button:hover {
     display: block;
     color: #fff;
 }
+
+.disabled {
+    background-color: #cccccc !important;
+    pointer-events: none;
+}
+
+#warning {
+    display: none;
+}
+
+.alert {
+    display: block !important;
+}
+
+.print_btn {
+    width: 100%;
+}
+
+.print {
+    float: right;
+    background-color: #4B3087;
+    color: #F2F3F5;
+}
+
+.print:hover {
+    background-color: #F2F3F5;
+    color: #4B3087;
+    border: 2px solid #4B3087 !important;
+}

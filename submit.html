@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="assets/js/validation.js"></script>
 </head>
 
 <body>
@@ -44,16 +45,18 @@
                 <div class="page slide-page">
                     <div class="card p-3">
                         <h2 class="text-center my-3">Personal Information</h2>
+                        <h6 class="mb-4 text-danger">* Required</h6>
                         <div class="row mb-3">
                             <div class="col-6"><input class="form-control" type="text" name="firstname"
-                                    placeholder="First Name"></div>
+                                    placeholder="First Name *" id="f_name"></div>
                             <div class="col-6"><input class="form-control" type="text" name="lastname"
-                                    placeholder="Last Name"></div>
+                                    placeholder="Last Name *" id="l_name"></div>
                         </div>
                         <div class="row mb-3">
-                            <div class="col-6"><input class="form-control" type="number" name="age" placeholder="Age">
+                            <div class="col-6"><input class="form-control" type="number" name="age" placeholder="Age *"
+                                    id="age_no">
                             </div>
-                            <div class="col"><select class="form-select" name="gender" required="">
+                            <div class="col"><select class="form-select" name="gender">
                                     <optgroup label="Gender">
                                         <option value="Male">Male</option>
                                         <option value="Female">Female</option>
@@ -61,10 +64,11 @@
                                     </optgroup>
                                 </select></div>
                         </div>
-                        <input type="number" class="form-control" name="phone" placeholder="Phone Number">
+                        <input type="number" class="form-control" name="phone" placeholder="Phone Number *"
+                            id="phone_no">
                     </div>
                     <div class="field ">
-                        <button class="firstNext next px-5">Next</button>
+                        <button class="firstNext next px-5" onclick="validationContent()">Next</button>
                     </div>
                 </div>
 
@@ -87,10 +91,10 @@
                             </script>
                         </div>
                     </div>
-
+                    <h6 class="text-center text-danger" id="warning">(Please enter all the details with *)</h6>
                     <div class="field btns">
                         <button class="prev-1 prev px-5">Previous</button>
-                        <button class="submit px-5">Submit</button>
+                        <button class="submit px-5" id="submit_btn">Submit</button>
                     </div>
                 </div>
 

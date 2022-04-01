@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Result | Image Classification</title>
+    <title>Report | Image Classification</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
@@ -24,45 +24,67 @@
     const gender = obj.gender;
     const phone = obj.phone;
 </script>
+<script>
+    function printDiv(printMe) {
+        var printContents = document.getElementById(printMe).innerHTML;
+        var originalContents = document.body.innerHTML;
+
+        document.body.innerHTML = printContents;
+
+        window.print();
+
+        document.body.innerHTML = originalContents;
+
+    }
+</script>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-dark">
         <a class="navbar-brand mx-5" href="index.html"><i class="fas fa-camera"></i>
             Image Classification</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <button class="btn btn-light mx-3" id="nameandresult"></button>
+            </li>
+        </ul>
     </nav>
     <div class="container">
-        <div class="card p-5 m-5" id="report">
-            <h1 class="text-center mb-5">Result</h1>
-            <img src="">
-            <h4 class="text-center" id="fullname"></h4>
-            <h4 class="text-center" id="agesex"></h4>
-            <h2 class="text-center" id="nameandresult"></h2>
-            <h3 class="text-center">The chances for image for being COVID is: </h3>
+        <div id="printMe">
+            <div class="card p-4 mx-5 mt-5" id="report_upper">
+                <div class="row">
+                    <div class="col-6">
+                        <h6>Patient ID: ######</h6>
+                        <h6 id="agesex"></h6>
+                    </div>
+                    <div class="col-6">
+                        <h6 id="fullname"></h6>
+                        <h6 id="number"></h6>
+                    </div>
+                </div>
+            </div>
+            <div class="card mx-5 mt-2 p-4">
+                <h5 id="report_result" class="my-2">According to the Machine Learning Algorithm used in the app, your
+                    X-ray
+                    suggests you
+                    have:</h5>
+                <h5 id="report_percentage" class="my-2">The percentage you might have COVID is: </h5>
+                <h5 id="report_non_percentage" class="my-2">The percentage you might not have COVID is: </h5>
+            </div>
         </div>
-        <div class="field">
-            <button id="print" class="btn btn-primary print text-center"
-                onclick="hideMe() ; window.print()">Print</button>
+        <div class="print_btn my-5">
+            <button id="print" class="btn btn-lg print text-center mx-5" onclick="printDiv('printMe')">Print
+                Report</button>
         </div>
-
         <script src="assets/bootstrap/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <script>
-            function hideMe() {
-                var me = document.getElementById("print");
-                me.classList.add("hidden");
-            }
-        </script>
-        <script>
-            document.getElementById("nameandresult").innerHTML = "Dear " + fname + ", Your image is of the kind:";
+            document.getElementById("nameandresult").innerHTML = "Hello, " + fname;
             document.getElementById("fullname").innerHTML = "Name : " +
                 fname + " " + lname;
             document.getElementById("agesex").innerHTML = "Age/Gender : " +
-                age + " " + gender;
+                age + "/" + gender;
+            document.getElementById("number").innerHTML = "Phone Number: " + phone;
         </script>
         <script src="assets/js/style.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"
