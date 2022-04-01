@@ -1,98 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Image Classification</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <title>Image Classification</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
-<body class="text-end">
-    <header class="p-4 bg-secondary">
-        <h1 class="text-center text-light">Image Classification</h1>
-    </header>
-    <div class="container">
-        <div class="progress-bar">
-            <div class="step">
-                <p>Personal Information</p>
-                <div class="bullet">
-                    <span>1</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
-            <div class="step">
-                <p>Image Upload</p>
-                <div class="bullet">
-                    <span>2</span>
-                </div>
-                <div class="check fas fa-check"></div>
-            </div>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand mx-5" href="index.html"><i class="fas fa-camera"></i>
+      Image Classification</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </nav>
+  <div class="container">
+    <div class="section section1 p-3">
+      <div class="col-6 textnbutton">
+        <h2>Select an Image for Classification</h2>
+        <p>The App will tell you does the x-ray in image is of COVID patient or not.</p>
+        <div class="start_buttons mt-5">
+          <a class="btn btn-lg btn_start mx-5" href="submit.html"><i class="fa-solid fa-circle-question"></i> Get
+            Started</a>
+          <a class="btn btn-lg btn-demo border" href="#"><i class="fa-solid fa-circle-play"></i> Watch Demo</a>
         </div>
-        <div class="form-outer">
-            <form method="GET" action="report.html">
-                <div class="page slide-page">
-                    <div class="card p-3">
-                        <h2 class="text-center my-3">Personal Information</h2>
-                        <div class="row mb-3">
-                            <div class="col-6"><input class="form-control" type="text" name="firstname"
-                                    placeholder="First Name"></div>
-                            <div class="col-6"><input class="form-control" type="text" name="lastname"
-                                    placeholder="Last Name"></div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-6"><input class="form-control" type="number" name="age" placeholder="Age">
-                            </div>
-                            <div class="col"><select class="form-select" name="gender" required="">
-                                    <optgroup label="Gender">
-                                        <option value="Male">Male</option>
-                                        <option value="Female">Female</option>
-                                        <option value="Others">Others</option>
-                                    </optgroup>
-                                </select></div>
-                        </div>
-                        <input type="number" class="form-control" name="phone" placeholder="Phone Number">
-                    </div>
-                    <div class="field ">
-                        <button class="firstNext next px-5">Next</button>
-                    </div>
-                </div>
-
-                <div class="page">
-                    <div class="card p-3">
-                        <div class="title text-center">X-ray Upload</div>
-                        <div id="drop-area">
-                            <p class="text-center">Upload photo with the file dialog or by dragging and
-                                dropping image</p>
-                            <input type="file" accept="image/*" onchange="loadFile(event)">
-                            <img id="output" width="200px" height="250px" />
-                            <script>
-                                var loadFile = function (event) {
-                                    var output = document.getElementById('output');
-                                    output.src = URL.createObjectURL(event.target.files[0]);
-                                    output.onload = function () {
-                                        URL.revokeObjectURL(output.src)
-                                    }
-                                };
-                            </script>
-                        </div>
-                    </div>
-
-                    <div class="field btns">
-                        <button class="prev-1 prev px-5">Previous</button>
-                        <button class="submit px-5">Submit</button>
-                    </div>
-                </div>
-
-            </form>
-        </div>
+      </div>
+      <div class="col-6">
+        <img src="assets/img/img1.jpg">
+      </div>
     </div>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="assets/js/style.js"></script>
+    <hr>
+    <div class="section section2 p-5">
+      <div class="col-12 text-center">
+        <h2>How does it work?</h2>
+        <p>A step-by-step guide on how to use the app</p>
+      </div>
+      <div class="col-12 actions mt-5">
+        <div class="col-4 instruction mx-3">
+          <i class="fas fa-2x fa-camera circle-icon"></i>
+          <h4>Select Image</h4>
+          <p>Select and image for classification and drag-and-drop it into the provided dropzone in the browser.</p>
+        </div>
+        <div class="col-4 instruction mx-3">
+          <i class="fa-solid fa-2x fa-upload circle-icon"></i>
+          <h4>Send Image for Classification</h4>
+          <p>Press the Submit buttion to send the image to the machine learning model for classification.</p>
+        </div>
+        <div class="col-4 instruction mx-3">
+          <i class="fa-solid fa-2x fa-download circle-icon"></i>
+          <h4>Get the Classification Result</h4>
+          <p>Next, the machine learning model classifies the image and displays the result on the screen.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="assets/js/style.js"></script>
 </body>
 
 </html>

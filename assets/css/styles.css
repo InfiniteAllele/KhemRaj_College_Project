@@ -5,6 +5,76 @@
     padding: 0;
     outline: none;
     font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background-color: #F2F3F5;
+}
+
+.navbar {
+    background-color: #4B3087;
+}
+
+header {
+    background-color: #4B3087;
+}
+
+
+.circle-icon {
+    background: #4B3087;
+    color: #F2F3F5;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.section {
+    min-height: 50vh;
+}
+
+.section1 {
+    display: flex;
+}
+
+.textnbutton {
+    margin-top: 8rem;
+}
+
+.btn_start {
+    background-color: #4B3087;
+    color: #F2F3F5;
+}
+
+.btn_start:hover {
+    background-color: #F2F3F5;
+    color: #4B3087;
+    border: 2px solid #4B3087 !important;
+}
+
+.btn-demo {
+    color: #4B3087;
+    border: 2px solid #4B3087 !important;
+
+}
+
+.btn-demo:hover {
+    color: #F2F3F5;
+    background-color: #4B3087;
+}
+
+.actions {
+    display: flex;
+}
+
+.instruction p {
+    font-size: small;
+}
+
+.upload_card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 ::selection {
@@ -69,7 +139,7 @@ form .page .field select {
 form .page .field button {
     height: calc(100% + 5px);
     border: none;
-    background: #d33f8d;
+    background: #4B3087;
     margin-top: -20px;
     border-radius: 5px;
     color: #fff;
@@ -90,7 +160,9 @@ form .page .field button {
 }
 
 form .page .field button:hover {
-    background: #000;
+    background: #F2F3F5;
+    color: #4B3087;
+    border: 2px solid #4B3087;
 }
 
 .container .progress-bar {
@@ -98,6 +170,8 @@ form .page .field button:hover {
     flex-direction: row;
     margin: 40px 0;
     user-select: none;
+    background-color: #4B3087;
+    color: #F2F3F5;
 }
 
 .container .progress-bar .step {
@@ -115,7 +189,7 @@ form .page .field button:hover {
 .container .progress-bar .step p {
     font-weight: 500;
     font-size: 18px;
-    color: #000;
+    color: #F2F3F5;
     margin-bottom: 8px;
 }
 
@@ -182,21 +256,4 @@ form .page .field button:hover {
 .progress-bar .step .check.active {
     display: block;
     color: #fff;
-}
-
-#drop-area {
-    margin: auto;
-    border: 2px dashed #ccc;
-    border-radius: 20px;
-    width: 1000px;
-    font-family: sans-serif;
-    padding: 20px;
-}
-
-#drop-area.highlight {
-    border-color: purple;
-}
-
-.hidden {
-    display: none;
 }
